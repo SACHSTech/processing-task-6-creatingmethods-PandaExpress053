@@ -19,15 +19,15 @@ public class Sketch extends PApplet {
     background(210, 255, 173);
 
     // This is where the user can input row and column units for the house grid
-    intRowNum = 20;
-    intColumnNum = 8;
+    intRowNum = 6;
+    intColumnNum = 15;
   }
 
   public void draw() {
     // draws house grid 
     houseGrid(intRowNum, intColumnNum);
 
-    // draws road grid
+    // draws road grid (third argument is where user can input desired direction of roads)
     drawRoadGrid(intRowNum, intColumnNum, 2);
   }
 
@@ -105,7 +105,7 @@ public class Sketch extends PApplet {
     
     // Horizontal road
     if (intDir == 1){
-      intRoadWidth = intGridOffsetY / 8;
+      intRoadWidth = intGridOffsetY / 4;
       rect(0, intPos - (intRoadWidth / 2), width, intRoadWidth);
       
       // Creating 10 Yellow lines for road, following direction of road
@@ -117,7 +117,7 @@ public class Sketch extends PApplet {
 
     // Vertical road
     else if (intDir == 2){
-      intRoadWidth = intGridOffsetX / 6;
+      intRoadWidth = intGridOffsetX / 4;
       rect(intPos - (intRoadWidth / 2), 0, intRoadWidth, height);
 
       // Creating 10 Yellow lines for road, following direction of road
@@ -175,7 +175,7 @@ public class Sketch extends PApplet {
   public int roadBuildCheck(int intDir){
     // when intDir = 0(no road); 1(horizontal); 2(vertical)
 
-    if (intDir == 1 && intGridOffsetY < 80){
+    if (intDir == 1 && intGridOffsetY < 50){
       // cannot build horizontal
       intDir = 2;
 
@@ -188,8 +188,8 @@ public class Sketch extends PApplet {
     else if (intDir == 2 && intGridOffsetX < 50){
       // cannot build vertical
       intDir = 1;
-      
-      if (intDir == 1 && intGridOffsetY < 80){
+
+      if (intDir == 1 && intGridOffsetY < 50){
         // cannot build horizontal
         intDir = 0;
       }
