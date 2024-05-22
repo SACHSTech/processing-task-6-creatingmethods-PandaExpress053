@@ -2,7 +2,10 @@ import processing.core.PApplet;
 
 public class Sketch extends PApplet {
 	
-	
+	/**
+   * Description: Creates a neighbourhood grid of houses and rows 
+   * @author: E.Fung
+   */
   // Creating variables
 
   int intGridOffsetX, intGridOffsetY;
@@ -19,8 +22,8 @@ public class Sketch extends PApplet {
     background(210, 255, 173);
 
     // This is where the user can input row and column units for the house grid
-    intRowNum = 6;
-    intColumnNum = 15;
+    intRowNum = 2;
+    intColumnNum = 6;
   }
 
   public void draw() {
